@@ -1,0 +1,15 @@
+.order-book{
+    width: 80%;
+    margin: 1rem auto;
+}
+.order-book > div{
+    display: flex;
+    justify-content: space-between;
+}
+.order-book > div > *{
+    width: 30%;
+}
+.order-book > div > h4{
+    border-bottom: 2px solid;
+    color: gray;
+}

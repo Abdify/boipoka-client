@@ -1,0 +1,24 @@
+.search-form{
+    margin: 1rem auto;
+}
+.search-form input{
+    width: 70%;
+    max-width: 400px;
+    border-radius: 10px 0 0 10px;
+}
+.search-form button{
+    border-radius: 0 10px 10px 0;
+}
+.books-container{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+@media (max-width: 768px){
+    .search-form input{
+        width: 50%;
+    }
+}

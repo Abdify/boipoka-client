@@ -1,0 +1,35 @@
+.current-user-books{
+    width: 80%;
+    height: 100vh;
+}
+.titles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: teal;
+}
+.titles h4{
+    border-bottom: 2px solid;
+    color: white;
+}
+.book-list{
+    display: flex;
+    justify-content: space-around;
+}
+.book-list:nth-child(2n){
+    background-color: aliceblue;
+}
+.book-list > *{
+    min-width: 25%;
+}
+@media (max-width: 768px){
+    .current-user-books{
+        width: 100%;
+    }
+    .titles{
+        display: none;
+    }
+    .book-list{
+        flex-direction: column;
+    }
+}

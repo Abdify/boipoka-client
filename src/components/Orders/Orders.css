@@ -1,0 +1,33 @@
+.order-book{
+    width: 80%;
+    margin: 1rem auto;
+}
+.order-book > div{
+    display: flex;
+    justify-content: space-between;
+}
+.order-book > div > *{
+    width: 30%;
+}
+.order-book > div > h4{
+    border-bottom: 2px solid;
+    color: gray;
+}
+
+@media (max-width: 768px){
+    .order-book{
+        width: 95%;
+    }
+    .order-book > div{
+        flex-direction: column;
+    }
+    .order-book > div:nth-child(2n){
+        background-color: aliceblue;
+    }
+    .order-book > div > *{
+        width: 100%;
+    }
+    .order-book > div > h4{
+        display: none;
+    }
+}
