@@ -1,8 +1,7 @@
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import loadingImage from '../../images/loading.gif';
 import DisplayBook from '../DisplayBook/DisplayBook';
+import SearchBooks from '../SearchBooks/SearchBooks';
 import './Home.css';
 
 const Home = () => {
@@ -27,10 +26,7 @@ const Home = () => {
     }
     return (
         <div>
-            <form className="search-form">
-                <input placeholder="Search Book" />
-                <button><FontAwesomeIcon icon={faSearch} /></button>
-            </form>
+            <SearchBooks />
             <div className="books-container">
                 {books &&
                     books.map((book) => {

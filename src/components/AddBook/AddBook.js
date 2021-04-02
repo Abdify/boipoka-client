@@ -62,7 +62,9 @@ const AddBook = () => {
                 if (data) {
                     console.log(data);
                     setSuccess(true);
-                    // bookNameRef.current.value = "";
+                    bookNameRef.current.value = "";
+                    authorNameRef.current.value = "";
+                    priceRef.current.value = "";
                 } else {
                     alert("Something went wrong, please try again!");
                 }

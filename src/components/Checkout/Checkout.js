@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { userContext } from "../../App";
 import loadingImage from "../../images/loading.gif";
-import "./Checkout.css";
 
 const Checkout = () => {
     const bookId = localStorage.getItem("selectedBook");
@@ -32,17 +31,17 @@ const Checkout = () => {
             <h1>Checkout</h1>
             {book && (
                 <div className="order-book">
-                    <div>
+                    <div className="titles">
                         <h4>Name</h4>
                         <h4>Quantity</h4>
                         <h4>Price</h4>
                     </div>
                     <div>
-                        <h3>
+                        <h4>
                             {book.name.length < 40 ? book.name : book.name.slice(0, 40) + "..."}
-                        </h3>
-                        <h2>{book.quantity || 1} piece</h2>
-                        <h2>${book.price - book.price * 0.05}</h2>
+                        </h4>
+                        <p>{book.quantity || 1} piece</p>
+                        <p>${book.price - book.price * 0.05}</p>
                     </div>
                 </div>
             )}
@@ -52,7 +51,11 @@ const Checkout = () => {
 
     function handleCheckout(orderedBook){
         const orderInfo = {
-            ...orderedBook,
+            bookId: orderedBook._id,
+            bookBy: orderedBook.email,
+            name: orderedBook.name,
+            author: orderedBook.author,
+            price: orderedBook.price,
             orderedAt: new Date(),
             orderedBy: currentUser.email
         }
@@ -68,7 +71,7 @@ const Checkout = () => {
             if(data){
                 history.push('/orders');
             } else {
-                alert('Could not place the order! May be you have ordered the book already!')
+                alert('Could not place the order!')
             }
         })
     }

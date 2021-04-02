@@ -33,7 +33,7 @@ const Orders = () => {
         <div>
             <h1>Your ordered books</h1>
             <div className="order-book">
-                <div>
+                <div className="titles">
                     <h4>Name</h4>
                     <h4>Quantity</h4>
                     <h4>Price</h4>
@@ -43,14 +43,19 @@ const Orders = () => {
                     orderedBooks.map((book) => {
                         return (
                             <div>
-                                <h3>
+                                <h4>
                                     {book.name.length < 40
                                         ? book.name
                                         : book.name.slice(0, 40) + "..."}
-                                </h3>
-                                <h2>{book.quantity || 1} piece</h2>
-                                <h2>${book.price - book.price * 0.05}</h2>
-                                <h3>{new Date(book.orderedAt).toDateString()}</h3>
+                                </h4>
+                                <p>{book.quantity || 1} piece</p>
+                                <p>${book.price - book.price * 0.05}</p>
+                                <p>
+                                    {
+                                        (new Date(book.orderedAt).toLocaleTimeString()+ " on " + 
+                                        new Date(book.orderedAt).toLocaleDateString())
+                                    }
+                                </p>
                             </div>
                         );
                     })}

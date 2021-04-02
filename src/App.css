@@ -31,3 +31,12 @@ li {
 .loading img {
     width: 50%;
 }
+
+.titles{
+    display: flex;
+    justify-content: space-around;
+    background-color: teal;
+}
+.titles *{
+    color: white;
+}
